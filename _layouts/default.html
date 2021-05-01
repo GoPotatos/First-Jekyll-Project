@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>{{page.title}}</title>
+<link href="/assets/css/styles.css" rel="stylesheet"/>
+
+{% seo %}
+</head>
+<body>
+	<h1>{{page.title}}</h1>
+	<h2>
+	{% for item in site.data.navigation %}
+		{% if page.url== item.link %}
+		Name: {{item.name}},
+		Url: {{item.link}}
+		<br/>
+		{% endif %}
+	{% endfor %}
+	
+	</h2>
+	{% include navigation.html %}
+	{{content}}
+</body>
+
+</html>
